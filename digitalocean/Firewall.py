@@ -98,7 +98,7 @@ class OutboundRule(object):
             self.destinations = destinations
         else:
             for destination in destinations:
-                self.destinations = Destinations(**destinations)
+                self.destinations = Destinations(**destinations) #
 
 
 class Firewall(BaseAPI):
