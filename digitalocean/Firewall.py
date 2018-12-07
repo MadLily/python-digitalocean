@@ -236,6 +236,15 @@ class Firewall(BaseAPI):
         )
 
     # TODO: Other Firewall calls (Add/Remove rules, Create / Delete etc)
+    def add_rules(self, rules, how='inbound'):
+        """
+        Add rules to this Firewall.
+        """
+        return self.get_data(
+            "firewalls/%s/rules" % self.id,
+            type=POST,
+            params={ how + "_rules": rules}
+        )
 
     def destroy(self):
         """
